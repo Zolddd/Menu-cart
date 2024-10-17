@@ -1,0 +1,362 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/KDCBG.jpg');
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.799); /* Adjust the color and opacity */
+  z-index: -1;
+}
+#ChatBot-Box{
+visibility: hidden;
+}
+main {
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+}
+
+.sidefilters {
+  width: 19%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgb(151, 138, 138);
+}
+
+.sidefilters h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.sidefilters ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidefilters li {
+  margin-bottom: 10px;
+}
+
+.sidefilters input {
+  margin-right: 10px;
+}
+
+.sidefilters a {
+  color: blue;
+  text-decoration: none;
+}
+
+.sidefilters a:hover {
+  text-decoration: underline;
+}
+
+.menu-list {
+  width: 79%;
+
+}
+
+.menu-list h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.restaurant-item {
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgb(151, 138, 138);
+}
+
+.restaurant-item img {
+  width: 200px;
+  height: 130px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.restaurant-info {
+  flex-grow: 1;
+  line-height: 1.2;
+}
+
+.restaurant-info h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.restaurant-info p {
+  margin: 5px 0;
+}
+
+.buttonCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.detailsbutton {
+
+  color: white;
+  border: none;
+  height: 30px;
+  width: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #16a290;
+}
+
+.detailsbutton a {
+  text-decoration: none;
+  color: white;
+}
+
+.cart {
+  background-color: #5ab3a7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 70px;
+}
+
+.restaurant-info button:hover {
+  background-color: #c0392b;
+}
+
+.text {
+  font-size: xx-large;
+  text-align: center;
+  background-color: #22577a;
+  padding: 15px;
+  border-radius: 5px;
+  color: #f5edef;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: #16a290;
+}
+
+strong {
+  color: #8d99ae;
+}
+
+.filters-toggle {
+  color: white;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-container {
+  gap: 10px;
+  margin-top: 75px;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  min-height: 630px;
+}
+
+/* Item added modal css  */
+#added-item-modal{
+  background-color: #16a290;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  margin-top: 660px;
+  margin-left: -20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display:flex;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 1000;
+  border: 1px solid white;
+}
+
+#added-item-modal-button{
+  height: 20px;
+}
+#close-modal-button{
+  display: none;
+  height: 20px;
+}
+@keyframes view {
+  from {
+    opacity: 0.6;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .sidefilters {
+    width: 25%;
+  }
+
+  .restaurant-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .restaurant-info h3 {
+    font-size: 1em;
+  }
+
+  .restaurant-info p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: row;
+    padding: 3px;
+  }
+
+  .buttonCont {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sidefilters {
+    width: 35%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 8px;
+  }
+
+  .sidefilters input {
+    margin-right: 10px;
+    margin-left: 0px;
+  }
+
+  .menu-list {
+    width: 100%;
+    margin-top: 7px;
+    margin-right: 12px;
+
+  }
+
+  .restaurant-item {
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  .restaurant-item img {
+    width: 27%;
+    height: 50px;
+  }
+
+  .restaurant-info {
+    text-align: start;
+    font-size: 7px;
+    line-height: 0.5;
+    margin-left: -15px;
+  }
+
+  .detailsbutton,
+  .cart {
+    width: 30px;
+    height: 20px;
+    font-size: 5px;
+  }
+
+  .text {
+    font-size: large;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .sidefilters h2,
+  .menu-list h2 {
+    font-size: 1em;
+  }
+
+  .sidefilters {
+    padding: 8px;
+
+  }
+
+  .sidefilters input {
+    width: 8px;
+  }
+
+  .sidefilters h2 {
+    font-size: 0.6em;
+    margin-bottom: 5px;
+  }
+
+  .sidefilters ul {
+    font-size: 8px;
+  }
+
+  .sidefilters li {
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .restaurant-info {
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-y: visible;
+    padding-top: 3px;
+  }
+
+  .restaurant-info h3 {
+    font-size: 1em;
+    width: 100%;
+    text-wrap: nowrap;
+  }
+
+  .restaurant-info p {
+    font-size: 0.8em;
+  }
+
+  .text {
+    font-size: medium;
+  }
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

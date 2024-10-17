@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Home Food Delivery</title>
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="shortcut icon" href="images/FoodLogo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/Font.css" />
+    <link rel="stylesheet" href="css/HeadAndFoot.css" />
+  </head>
+
+  <body class="poppins-regular">
+    <header>
+      <nav>
+        <div class="logo">
+          <div class="navlogo">
+            <img width="30" src="images/logo.png" alt="Logo" />
+            <span>KhanaDotCom</span>
+          </div>
+          <div class="signlog">
+            <!-- Restaurant Owner Dashboard -->
+            <button class="restaurant-owner-links poppins-regular">
+              Dashboard
+            </button>
+
+            <button class="login loginButton poppins-regular">
+              <a href="login.html">LogIn</a>
+            </button>
+            <div class="signupdrop">
+              <button class="signup-toggle poppins-regular" id="signup-toggle">
+                SignUp
+              </button>
+              <ul id="sign-menu" class="sign-menu">
+                <li><a href="customer.html">Customer Login</a></li>
+                <li><a href="deliverylogin.html">Delivery Person</a></li>
+                <li><a href="restaurantlogin.html">Restaurant</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="dropdown">
+        <button class="menu-toggle" id="menu-toggle">
+          <img src="images/Menu.webp" alt="" width="27" />
+        </button>
+        <ul id="nav-menu" class="mobile-menu">
+          <li>
+            <a href="index.html"><img src="images/Home.png" alt="" />Home</a>
+          </li>
+          <li>
+            <a href="menu.html"><img src="images/Menu.webp" alt="" />Menu</a>
+          </li>
+          <li>
+            <div class="cart-box">
+              <img src="images/Cart.png" alt="" />
+              <span class="item-In-Cart" id="itemincart">0</span>
+            </div>
+            <a href="Cart.html">Cart</a>
+          </li>
+          <li>
+            <a href="OrderHistory.html"
+              ><img src="images/Order.png" alt="" />Orders</a
+            >
+          </li>
+          <li>
+            <a href="profile.html"
+              ><img src="images/Profile.jpg" alt="" />Profile</a
+            >
+          </li>
+          <li>
+            <a href="t&c.html"
+              ><img src="images/Help.webp" alt="" />Help/Support</a
+            >
+          </li>
+          <li>
+            <a href="login.html"
+              ><img src="images/Login.png" alt="" /><span class="loginButton"
+                >Login</span
+              ></a
+            >
+          </li>
+        </ul>
+
+        <input
+          type="search"
+          placeholder="search"
+          class="searchbar poppins-regular"
+          tabindex="-1"
+        />
+
+        <div class="filters">
+          <button class="filter-toggle" id="filter-toggle">Filters</button>
+          <ol id="filter-menu" class="filter-menu">
+            <li>Dhaba <input type="checkbox" /></li>
+            <li>Most Rated <input type="checkbox" /></li>
+            <li>Chinese Retro <input type="checkbox" /></li>
+            <li>Subway <input type="checkbox" /></li>
+          </ol>
+        </div>
+      </div>
+    </header>
+
+    <!-- Restaurant-Owner-Dashboard  -->
+    <div class="restaurant-dashboard">
+      <div class="close-dash-cont">
+        <div class="first">--</div>
+        <div>Dashboard</div>
+        <span class="close-dash">&times;</span>
+      </div>
+      <div class="add-buttons-cont">
+        <button class="add-res poppins-regular">
+          <a href="AddRes.html">Add Restaurant</a>
+        </button>
+        <button class="add-menu poppins-regular">
+          <a href="AddMenu.html">Add Menu</a>
+        </button>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <div class="menu-container">
+        <aside class="sidefilters">
+          <h2>All Cuisines A-Z</h2>
+          <ul>
+            <li>
+              <input type="checkbox" id="american" /><label for="american"
+                >American (1)</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="burgers" /><label for="burgers"
+                >Burgers (2)</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="chinese" /><label for="chinese"
+                >Chinese (9)</label
+              >
+            </li>
+            <!-- Add more cuisines as needed -->
+            <li><a href="#">+ More</a></li>
+          </ul>
+          <h2>Offers</h2>
+          <ul>
+            <li>
+              <input type="checkbox" id="offer1" /><label for="offer1"
+                >Set menu ₹20 and under</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="offer2" /><label for="offer2"
+                >Set menu ₹30 and under</label
+              >
+            </li>
+            <!-- Add more offers as needed -->
+          </ul>
+        </aside>
+
+        <section class="menu-list" id="menu-list"></section>
+      </div>
+
+      <!-- Logout  -->
+      <div id="logoutPopup" class="popup">
+        <div class="popup-content">
+          <p>Do you really want to logout?</p>
+          <button id="confirmLogout" class="poppins-regular">Yes</button>
+          <button id="cancelLogout" class="poppins-regular">No</button>
+        </div>
+      </div>
+
+      <div id="added-item-modal">
+        <button id="added-item-modal-button">Open</button>
+        <button id="close-modal-button">X</button>
+      </div>
+      <div id="ChatBot-Box"><button id="bot-toggle"></button></div>
+      <!-- Not for use just to remove error -->
+    </main>
+
+    <script src="js/menu.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
